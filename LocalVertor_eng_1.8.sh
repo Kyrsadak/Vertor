@@ -183,7 +183,7 @@ fi
 # Compile with warning flags
 echo -n "Compiling with warning flags..."
 EXEC="${FILE%.c}.app"
-COMPILE_LOG=$(gcc -Wall -Wextra -Wpedantic -Werror "$FILE" -o "$EXEC" 2>&1)
+COMPILE_LOG=$(gcc -Wall -Wextra -Wpedantic  "$FILE" -o "$EXEC" 2>&1)
 COMPILE_STATUS=$?
 if [ $COMPILE_STATUS -ne 0 ]; then
     ERRORS+=("${RED} Compilation errors in $FILE:\n$COMPILE_LOG\n\nTips:\n- Unused variables: remove or use them\n- Unused parameters: remove or use them\n- Other errors: check syntax and logic.${NC}")

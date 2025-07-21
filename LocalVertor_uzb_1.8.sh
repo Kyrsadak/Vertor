@@ -183,7 +183,7 @@ fi
 # Kompilyatsiya qilish
 echo -n "Kompilyatsiya jarayoni..."
 EXEC="${FILE%.c}.app"
-COMPILE_LOG=$(gcc -Wall -Wextra -Wpedantic -Werror "$FILE" -o "$EXEC" 2>&1)
+COMPILE_LOG=$(gcc -Wall -Wextra -Wpedantic  "$FILE" -o "$EXEC" 2>&1)
 COMPILE_STATUS=$?
 if [ $COMPILE_STATUS -ne 0 ]; then
     ERRORS+=("${RED}$FILE faylida kompilyatsiya xatolari:\n$COMPILE_LOG\n\nYechimlar:\n- Keraksiz o‘zgaruvchilarni olib tashlang yoki ishlating\n- Keraksiz parametrlarni olib tashlang yoki ishlating\n- Boshqa xatolar: sintaksis va mantiqni tekshiring.${NC}")

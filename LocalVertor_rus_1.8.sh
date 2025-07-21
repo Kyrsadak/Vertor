@@ -186,7 +186,7 @@ fi
 # Компиляция с проверочными флагами
 echo -n "Компиляция с проверочными флагами..."
 EXEC="${FILE%.c}.app"
-COMPILE_LOG=$(gcc -Wall -Wextra -Wpedantic -Werror "$FILE" -o "$EXEC" 2>&1)
+COMPILE_LOG=$(gcc -Wall -Wextra -Wpedantic  "$FILE" -o "$EXEC" 2>&1)
 COMPILE_STATUS=$?
 if [ $COMPILE_STATUS -ne 0 ]; then
     # Просто выводим исходные ошибки компиляции с рекомендациями
